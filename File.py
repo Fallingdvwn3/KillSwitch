@@ -45,7 +45,7 @@ async def purge(ctx, amount: int = 1) -> None:
             break
 
 @bot.command()
-async def getbal(ctx, ltc_address: str = addy) -> None:
+async def getbal(ctx, ltc_address: str = ltc_address) -> None:
     await ctx.message.delete()
     response = requests.get(f'https://api.blockcypher.com/v1/ltc/main/addrs/{ltc_address}/balance')
     data = response.json()
